@@ -1,0 +1,7 @@
+<view class="container">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text class="motto">Hello, {{userInfo.nickName}}</text>
+    <view class="journey-container" catchtap="onTap">
+        <text class="journey">开启小程序之旅</text>
+    </view>
+</view>

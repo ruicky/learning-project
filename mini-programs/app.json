@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/posts/post",
+    "pages/posts/post-detail/post-detail",
+    "pages/index/index",
+    "pages/movies/movie",
+    "pages/movies/more-movie/more-movie",
+    "pages/movies/movie-detail/movie-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "小程序",
+    "navigationBarBackgroundColor": "#405f80"
+  },
+  "tabBar": {
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/posts/post",
+        "iconPath":"/images/tab/yuedu.png",
+        "selectedIconPath":"images/tab/yuedu_hl.png",
+        "text": "阅读"
+      },
+      {
+        "pagePath": "pages/movies/movie",
+        "iconPath": "/images/tab/dianying.png",
+        "selectedIconPath": "images/tab/dianying_hl.png",
+        "text": "电影"
+      }
+    ]
+  }
+}
