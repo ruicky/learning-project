@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<view class="index-container">
+  <view class="big-image-container">
+    <image class="weather-bg-img" src="/images/weather-bg/weather-bg-1.png"></image>
+
+    <view class="big-image-address-container" bindtap="onChooseLocation">
+      <image src="/images/icon/location.png"></image>
+      <text>{{address}}</text>
+    </view>
+    <text class="degrees">{{weatherData.headerData.temperature}}</text>
+    <text class="wind">{{weatherData.headerData.windDesc}}</text>
+    <text class="pm25">{{weatherData.headerData.aqiDesc}}</text>
+  </view>
+  <view class="rain-container">
+    <text>{{weatherData.minutely.description}}</text>
+    <image src="/images/rain-bg.png"></image>
+  </view>
+  <view class="hour-container">
+    <text class="hour-title">{{weatherData.hourly.description}}</text>
+    <scroll-view scroll-x="true" style="width:100%">
+      <view class="hour-item-list">
+        <block wx:for="{{weatherData.hourly.list}}" wx:for-index="idx" wx:for-item="itemName">
+          <view class="hour-item">
+            <text class="hour-time">{{idx==0 ? "现在" : itemName.datetime}}</text>
+            <view class="hour-img {{itemName.weatherName}}" style="background-image:url(/images/weather.png);"></view>
+            <text class="hour-degrees">{{itemName.temperature}}</text>
+            <text class="hour-air-quality" style="color:{{itemName.aqi_color}}">{{itemName.aqiLevel}}</text>
+            <text class="hour-air-mark"  style="color:{{itemName.aqi_color}}">{{itemName.aqi}}</text>
+          </view>
+          </block>
+      </view>
+
+    </scroll-view>
+  </view>
+
+  <view class="day-container">
+    <scroll-view scroll-x="true" style="width:100%">
+      <view class="day-list">
+      <block wx:for="{{weatherData.daily.list}}" wx:for-index="idx" wx:for-item="itemName">
+        <view class="day-item">
+          <text class="week-time">{{idx==0 ? "今天" : itemName.week}}</text>
+          <text class="day-time">{{itemName.date}}</text>
+          <view class="day-img {{itemName.weatherName}}" style="background-image:url(/images/weather.png);"></view>
+          <text class="day-degrees">{{itemName.maxTemperature}}/{{itemName.minTemperature}}</text>
+          <text class="day-air-quality" style="color:{{itemName.aqi_color}}">{{itemName.aqiLevel}}</text>
+          <text class="day-air-mark" style="color:{{itemName.aqi_color}}">{{itemName.aqi}}</text>
+          <text class="day-wind">{{itemName.windDirection}}</text>
+          <text class="day-wind-num">{{itemName.windSpeed}}级</text>
+        </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="reminder-container">
+    <view class="reminder-item">
+      <image class="reminde-img" src="/images/icon/medical-box.png"></image>
+      <text class="reminder-msg">{{weatherData.reminder.coldRisk}}</text>
+      <text class="reminder-pro">感冒</text>
+    </view>
+    <view class="reminder-item">
+      <image class="reminde-img" src="/images/icon/clothes.png"></image>
+      <text class="reminder-msg">{{weatherData.reminder.dressing}}</text>
+      <text class="reminder-pro">穿衣</text>
+    </view>
+    <view class="reminder-item">
+      <image class="reminde-img" src="/images/icon/umbrella.png"></image>
+      <text class="reminder-msg">{{weatherData.reminder.ultraviolet}}</text>
+      <text class="reminder-pro">紫外线</text>
+    </view>
+    <view class="reminder-item">
+      <image class="reminde-img" src="/images/icon/car.png"></image>
+      <text class="reminder-msg">{{weatherData.reminder.carWashing}}</text>
+      <text class="reminder-pro">洗车</text>
+    </view>
+  </view>
+</view>

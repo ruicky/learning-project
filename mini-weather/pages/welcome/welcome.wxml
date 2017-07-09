@@ -1,0 +1,13 @@
+<view class="welcome-container">
+  <!--<image src="/images/welcome-bg.png">
+  </image>-->
+      <view class="logo-container">
+      <image class="logo-img" src="/images/icon/logo.png"></image>
+      <image class="logo-text" src="/images/logo-text.png"></image>
+    </view>
+    <view class="welcome-bottom">
+      <image src="/images/icon/aite.png"></image>
+      <text>By Ruicky</text>
+    </view>
+
+</view>

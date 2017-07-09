@@ -1,0 +1,3 @@
+<!--<map id="myMap" show-location />-->
+
+<button type="primary" bindtap="onClick">获取位置</button>
