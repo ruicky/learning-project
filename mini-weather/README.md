@@ -3,7 +3,8 @@
 是用来显示天气的微信小程序。
 
 # 效果图
-
+![1](documents/1.png)
+![2](documents/2.png)
 
 
 
